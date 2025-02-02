@@ -30,7 +30,7 @@ const services = [
   },
   {
     title: "Bed Bug Removal",
-    image: "images/services/bad-bug-control.jpg",
+    image: "images/services/bed-bug-control.jpg",
     description: "Eliminate bed bugs with our specialized treatment.",
   },
 ];
