@@ -11,11 +11,15 @@
   }
 }
 @media only screen and (max-width: 991px) {
-  .margin {
-    margin-top: 25px;
+  .about-sec {
+    flex-direction: column-reverse;
+    gap: 30px;
   }
-  .padding-footer {
-    padding-top: 30px;
+  .about-sec .text {
+    width: 100%;
+  }
+  .approach-section {
+    margin-top: 30px;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -24,6 +28,12 @@
   }
   .top-contact-info .contact-info-right .text {
     font-size: 1.8em;
+  }
+  .about-sec .text {
+    font-size: 2.3em;
+  }
+  .approach-section .text{
+    font-size: 2.3em;
   }
 }
 @media only screen and (max-width: 768px) {
