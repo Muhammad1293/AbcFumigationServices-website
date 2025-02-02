@@ -15,7 +15,7 @@ body {
   font-family: poppin-medium;
   src: url(font/Poppins/Poppins-Medium.ttf);
 }
-.green{
+.green {
   color: #299b46;
 }
 .font-bold {
@@ -197,7 +197,6 @@ body {
   align-items: center;
 }
 
-
 /* Services Section */
 .service-card {
   border: 1px solid #ddd;
@@ -217,7 +216,7 @@ body {
   border-radius: 8px;
 }
 .whatsapp-btn {
-  background-color: #25D366;
+  background-color: #25d366;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -225,6 +224,115 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-.services-section{
+.services-section {
   margin-top: 100px;
+}
+
+/* Vedio Section start */
+.video-section {
+  margin-top: 80px;
+  position: relative;
+  height: 650px;
+  background: url('images/services/pest-control.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Overlay */
+.video-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+/* Dark overlay effect */
+.video-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Play button */
+.play-btn {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.play-btn i {
+  color: black;
+  font-size: 40px;
+}
+
+/* Close button with arrow */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1051; /* Higher than modal content */
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* stats container */
+.stats-container{
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  top: -30px;
+  z-index: 2;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.stats-container .stats{
+  padding: 30px; 
+  line-height: 20px;
+}
+.stats-container .stats .text{
+  font-size: 3em;
+}
+
+.extra-info .extra{
+  background-color: #f5f7f2;
+  /* padding: 0px 30px; */
+  border-radius: 10px;
+}
+.extra-info .text{
+  font-size: 2.7em;
+  color: #002f47;
+}
+.extra-info .extra{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.extra-info .extra img{
+  width: 100%;
+}
+.whyChoseUsSection{
+  background-color: #002f47;
 }

@@ -60,3 +60,16 @@ services.forEach((service) => {
     `;
   servicesContainer.appendChild(card);
 });
+
+// Vedio Section
+const videoId = "vbyEVjsBDGM"; // Replace with your YouTube video ID
+const videoModal = document.getElementById("videoModal");
+const youtubeVideo = document.getElementById("youtubeVideo");
+
+videoModal.addEventListener("show.bs.modal", function () {
+    youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+});
+
+videoModal.addEventListener("hidden.bs.modal", function () {
+    youtubeVideo.src = "";
+});

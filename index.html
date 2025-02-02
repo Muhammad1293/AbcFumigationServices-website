@@ -88,12 +88,15 @@
           <div class="collapse navbar-collapse my-nav-items" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#targetAbout"
                   >About Us</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Services</a>
+                <a class="nav-link active" href="#targetServices">Services</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#">Clients</a>
@@ -177,7 +180,7 @@
     </div>
     <!-- top contact info end-->
     <!-- about section start -->
-    <section class="container-fluid about-section">
+    <section class="container-fluid about-section" id="targetAbout">
       <div class="container">
         <div class="row about-sec">
           <!-- left side -->
@@ -233,14 +236,111 @@
       </div>
     </section>
     <!-- Approach Section end -->
-     <!-- Services Section Start -->
-     <section class="container-xxl  services-section">
+    <!-- Services Section Start -->
+    <section class="container-xxl services-section" id="targetServices">
       <p class="font-light green h5 text-center">WHAT WE OFFER</p>
       <h2 class="text-center mb-4 font-bold">Get rid of unwanted pests!</h2>
-      <p class="font-medium text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+      <p class="font-medium text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+        luctus nec ullamcorper mattis, pulvinar dapibus leo.
+      </p>
       <div class="row" id="services-container"></div>
-  </section>
-     <!-- Services Section Start -->
+    </section>
+    <!-- Services Section end -->
+    <!-- Vedio Section -->
+    <section class="video-section container-fluid">
+      <div class="video-content container-xxl">
+        <h1 class="fw-bold">The pest control expert you can trust.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+        </p>
+
+        <!-- Play Button (Opens Modal) -->
+        <div
+          class="play-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#videoModal"
+        >
+          <i class="fa-solid fa-play fa-beat" style="color: #299b46"></i>
+        </div>
+      </div>
+    </section>
+    <section class="container stats-container">
+      <div class="row stats">
+        <div class="col-lg-3 col-md-6">
+          <p class="font-bold green text">14K+</p>
+          <p class="font-medium h5">Happy Customer</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <p class="font-bold green text">7K+</p>
+          <p class="font-medium h5">Company Support</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <p class="font-bold green text">715</p>
+          <p class="font-medium h5">Professional Expert</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <p class="font-bold green text">25+</p>
+          <p class="font-medium h5">Years Experience</p>
+        </div>
+      </div>
+    </section>
+    <!-- Video Modal -->
+    <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="videoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content position-relative">
+          <!-- Close Button Inside (Always Visible) -->
+          <button
+            type="button"
+            class="close-btn"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="fa-solid fa-x" style="color: #299b46"></i>
+          </button>
+
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe id="youtubeVideo" src="" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Vedio section end  -->
+    <!-- extra -->
+    <section class="extra-info">
+      <div class="container-xxl">
+        <div class="row extra">
+          <!-- right -->
+          <div class="col-lg-6 col-md-6">
+            <p class="font-bold text">
+              We use safe and environmentally friendly measures.
+            </p>
+            <p>
+              Venenatis aptent faucibus potenti facilisis nostra massa felis
+              ligula consequat. Finibus mi fusce urna in quam consectetuer est
+              proin odio. Tempus bibendum felis dui sem libero vel arcu.
+            </p>
+          </div>
+          <!-- left -->
+          <div class="col-lg-6 col-md-6">
+            <img src="images/img__2.png" width="100%" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE SECTION START -->
+    
+    <!-- WHY CHOOSE SECTION END -->
     <!-- custom js -->
     <script src="app.js"></script>
     <!-- AOS Animation JS -->
