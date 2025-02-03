@@ -64,7 +64,7 @@ body {
   align-items: center;
   font-weight: bold;
 }
-.my-nav-items ul a:hover{
+.my-nav-items ul a:hover {
   border-bottom: 4px solid #299b46;
 }
 .section-one {
