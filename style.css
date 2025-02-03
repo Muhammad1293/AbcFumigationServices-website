@@ -46,16 +46,15 @@ body {
   width: 100%;
   align-items: center;
   display: flex;
-  /* color: white; */
-  font-family: poppin-bold;
 }
 .logo a {
   font-weight: bold;
   font-size: 1.2em;
 }
 .logo {
-  background-color: #002f47;
+  /* background-color: #002f47; */
   padding: 10px;
+  margin-bottom: 5px;
 }
 .my-nav-items {
   font-size: 1.2em;
@@ -64,6 +63,9 @@ body {
 .my-nav-items ul {
   align-items: center;
   font-weight: bold;
+}
+.my-nav-items ul a:hover{
+  border-bottom: 4px solid #299b46;
 }
 .section-one {
   position: relative;

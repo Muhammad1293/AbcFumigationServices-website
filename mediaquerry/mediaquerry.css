@@ -32,6 +32,14 @@
   }
 }
 @media only screen and (max-width: 500px) {
+  nav .logo img{
+    width: 70%;
+    height: 50px;
+  }
+  nav .my-icon{
+    width: 25px;
+    height: 25px;
+  }
   .top-contact-info .contact-info-left .number {
     font-size: 2em;
   }
