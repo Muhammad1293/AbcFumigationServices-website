@@ -651,6 +651,7 @@
         once: true, // This makes animations repeat on every scroll
       });
     </script>
+    <script src="send_mail.php"></script>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
