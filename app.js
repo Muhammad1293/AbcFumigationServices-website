@@ -91,7 +91,6 @@ videoModal.addEventListener("hidden.bs.modal", function () {
 });
 
 // client section
-
 const clients = [
   "images/clients/Habib-Asset-Management.png",
   "images/clients/Habib-Metropolitan-Bank.png",
@@ -141,3 +140,25 @@ function createClientSlides() {
 
 // Load client slides on page load
 window.onload = createClientSlides;
+
+
+// contact form
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  let formData = new FormData(this);
+
+  fetch("send_mail.php", {
+      method: "POST",
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      let responseMessage = document.getElementById("responseMessage");
+      responseMessage.innerHTML = `<div class="alert ${data.success ? 'alert-success' : 'alert-danger'}">${data.message}</div>`;
+      if (data.success) document.getElementById("contactForm").reset();
+  })
+  .catch(error => {
+      console.error("Error:", error);
+  });
+});
