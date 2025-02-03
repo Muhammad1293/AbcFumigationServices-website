@@ -55,6 +55,9 @@
   .extra-info .text {
     font-size: 1.7em;
   }
+  .whyChoseUsSection .why-choose-sec .text {
+    font-size: 1.8em;
+  }
 }
 @media only screen and (max-width: 768px) {
   .top-contact-info .contact-info-left {

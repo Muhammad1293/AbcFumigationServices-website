@@ -342,3 +342,20 @@ body {
 .whyChoseUsSection {
   background-color: #002f47;
 }
+.whyChoseUsSection .why-choose-sec {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+}
+.whyChoseUsSection .why-choose-sec .text {
+  font-size: 2.6em;
+}
+.whyChoseUsSection .why-choose-sec .right .box {
+  border: 1px solid #2b5266;
+  padding: 20px;
+  border-radius: 5px;
+}
+.whyChoseUsSection .why-choose-sec ul {
+  margin-top: 20px;
+  line-height: 2.2em;
+}
