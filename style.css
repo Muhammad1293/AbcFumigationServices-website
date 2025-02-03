@@ -359,6 +359,15 @@ body {
   line-height: 2.2em;
 }
 
+/* Client section */
+.client-logo {
+  max-width: 100%; /* Adjust logo size */
+  max-height: 80px;
+  object-fit: contain;
+  /* filter: grayscale(100%); */
+  transition: filter 0.3s;
+}
+
 /* Footer */
 footer .text {
   color: #002f47;

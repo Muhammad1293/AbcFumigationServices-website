@@ -89,3 +89,55 @@ videoModal.addEventListener("show.bs.modal", function () {
 videoModal.addEventListener("hidden.bs.modal", function () {
   youtubeVideo.src = "";
 });
+
+// client section
+
+const clients = [
+  "images/clients/Habib-Asset-Management.png",
+  "images/clients/Habib-Metropolitan-Bank.png",
+  "images/clients/Ismail-Industries-Limited.png",
+  "images/clients/Ismail-Industries-Limited.png",
+  "images/clients/Ismail-Industries-Limited.png",
+  "images/clients/Lucky-Electric.png",
+  "images/clients/Lucky-Electric.png",
+  "images/clients/Lucky-Electric.png",
+  "images/clients/Ismail-Industries-Limited.png",
+  "images/clients/Ismail-Industries-Limited.png",
+  "images/clients/Ismail-Industries-Limited.png",
+  "images/clients/Ismail-Industries-Limited.png",
+];
+
+// Function to create slides dynamically
+function createClientSlides() {
+  const carouselContent = document.getElementById("carouselContent");
+  carouselContent.innerHTML = ""; // Clear previous content
+
+  let slides = "";
+  let activeClass = "active";
+
+  for (let i = 0; i < clients.length; i += 4) {
+    // Change to 4 logos per slide
+    // Create a new carousel item for every 4 logos
+    let slideItems = clients
+      .slice(i, i + 4)
+      .map(
+        (client) =>
+          `<img src="${client}" class="img-fluid client-logo" alt="Client">`
+      )
+      .join("");
+
+    slides += `
+          <div class="carousel-item ${activeClass}">
+              <div class="d-flex justify-content-between align-items-center">
+                  ${slideItems}
+              </div>
+          </div>
+      `;
+    activeClass = ""; // Only first slide should be active
+  }
+
+  carouselContent.innerHTML = slides;
+}
+
+// Load client slides on page load
+window.onload = createClientSlides;
