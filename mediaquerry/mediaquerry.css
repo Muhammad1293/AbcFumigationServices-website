@@ -32,11 +32,11 @@
   }
 }
 @media only screen and (max-width: 500px) {
-  nav .logo img{
+  nav .logo img {
     width: 70%;
     height: 50px;
   }
-  nav .my-icon{
+  nav .my-icon {
     width: 25px;
     height: 25px;
   }
@@ -65,5 +65,10 @@
   }
   .top-contact-info .contact-info-right .text {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  .services-sec {
+    flex: 0 0 100%;
   }
 }

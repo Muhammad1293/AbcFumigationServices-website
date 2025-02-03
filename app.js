@@ -16,22 +16,26 @@ const services = [
   {
     title: "Pest Control",
     image: "images/services/pest-control.jpg",
-    description: "Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
+    description:
+      "Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
   },
   {
     title: "Termite Treatment",
     image: "images/services/termite-control.jpg",
-    description: "Protect your home from destructive termites.Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
+    description:
+      "Protect your home from destructive termites.Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
   },
   {
     title: "Rodent Control",
     image: "images/services/rat-control.jpg",
-    description: "Keep your house rodent-free with expert solutions.Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
+    description:
+      "Keep your house rodent-free with expert solutions.Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
   },
   {
     title: "Bed Bug Removal",
     image: "images/services/bed-bug-control.jpg",
-    description: "Eliminate bed bugs with our specialized treatment.Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
+    description:
+      "Eliminate bed bugs with our specialized treatment.Safe and effective pest removal solutions Safe and effective pest removal solutions Safe and effective pest removal solutions.",
   },
 ];
 
@@ -47,7 +51,7 @@ const servicesContainer = document.getElementById("services-container");
 
 services.forEach((service) => {
   const card = document.createElement("div");
-  card.classList.add("col-lg-6", "col-md-12", "mb-4");
+  card.classList.add("services-sec", "col-lg-6", "col-md-12", "mb-4");
   card.innerHTML = `
         <div class="service-card d-flex flex-md-row flex-column align-items-center p-3" 
              data-aos="fade-up" data-aos-duration="3000" 
@@ -64,13 +68,14 @@ services.forEach((service) => {
             <div class="service-content text-center text-md-start ms-md-3 w-100">
                 <h4 class="mt-2 font-bold text-success">${service.title}</h4>
                 <p class="mb-2">${service.description}</p>
-                <a href="${generateWhatsAppLink(service.title)}" target="_blank" class="btn btn-success">Contact Us</a>
+                <a href="${generateWhatsAppLink(
+                  service.title
+                )}" target="_blank" class="btn btn-success">Contact Us</a>
             </div>
         </div>
     `;
   servicesContainer.appendChild(card);
 });
-
 
 // Vedio Section
 const videoId = "vbyEVjsBDGM"; // Replace with your YouTube video ID
@@ -78,9 +83,9 @@ const videoModal = document.getElementById("videoModal");
 const youtubeVideo = document.getElementById("youtubeVideo");
 
 videoModal.addEventListener("show.bs.modal", function () {
-    youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
 });
 
 videoModal.addEventListener("hidden.bs.modal", function () {
-    youtubeVideo.src = "";
+  youtubeVideo.src = "";
 });
