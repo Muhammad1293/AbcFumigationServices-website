@@ -1,9 +1,16 @@
 <?php
 // Include Composer's autoload file
-require 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 
 // Create a new PHPMailer instance
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+$mail = new PHPMailer(true);
 
 try {
     // Set PHPMailer to use SMTP
@@ -12,8 +19,8 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = 'danishkhanghunio456@gmail.com';  // Your Gmail address
     $mail->Password = 'vfadrjiapeqtzynl';  // Your Gmail password (or App-specific password if 2FA enabled)
-    $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;  // Use port 465 for SSL or 587 for TLS
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;  // Use port 465 for SSL or 587 for TLS
 
     // Get form data
     $name = filter_var(trim($_POST["name"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
