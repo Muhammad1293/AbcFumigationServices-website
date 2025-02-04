@@ -12,6 +12,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- jQuery (Ensure jQuery is loaded) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Font Awesome Kit -->
     <script
       src="https://kit.fontawesome.com/8adc2f8a26.js"
@@ -495,73 +497,51 @@
     <div class="container my-5">
       <h2 class="text-center mb-4 font-bold">Contact Us</h2>
       <div class="form-container font-medium">
-        <form id="contactForm">
-          <div class="row mb-3">
-            <!-- Name & Email -->
-            <div class="col-md-6">
-              <label for="name" class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                name="name"
-                required
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                required
-              />
-            </div>
-          </div>
+      <form id="contactForm">
+  <div class="row mb-3">
+    <!-- Name & Email -->
+    <div class="col-md-6">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required />
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required />
+    </div>
+  </div>
 
-          <div class="row mb-3">
-            <!-- Phone Number & Services -->
-            <div class="col-md-6">
-              <label for="phone" class="form-label">Phone Number</label>
-              <input
-                type="tel"
-                class="form-control"
-                id="phone"
-                name="phone"
-                required
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="services" class="form-label">Select Service</label>
-              <select class="form-select" id="services" name="services">
-                <option value="Fumigation">Fumigation</option>
-                <option value="Termite">Termite</option>
-                <option value="Rodent Control">Rodent Control</option>
-                <option value="Tank Cleaning">Tank Cleaning</option>
-              </select>
-            </div>
-          </div>
+  <div class="row mb-3">
+    <!-- Phone Number & Services -->
+    <div class="col-md-6">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required />
+    </div>
+    <div class="col-md-6">
+      <label for="services" class="form-label">Select Service</label>
+      <select class="form-select" id="services" name="services" required>
+        <option value="" disabled selected>Choose a Service</option>
+        <option value="Fumigation">Fumigation</option>
+        <option value="Termite">Termite</option>
+        <option value="Rodent Control">Rodent Control</option>
+        <option value="Tank Cleaning">Tank Cleaning</option>
+      </select>
+    </div>
+  </div>
 
-          <div class="mb-3">
-            <!-- Message Box (Full Width) -->
-            <label for="message" class="form-label">Message</label>
-            <textarea
-              class="form-control"
-              id="message"
-              name="message"
-              rows="4"
-              required
-            ></textarea>
-          </div>
+  <div class="mb-3">
+    <!-- Message Box (Full Width) -->
+    <label for="message" class="form-label">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+  </div>
 
-          <!-- Centered and Styled Submit Button -->
-          <div class="text-center font-bold">
-            <button type="submit" class="btn btn-success btn-lg">Submit</button>
-          </div>
+  <!-- Centered and Styled Submit Button -->
+  <div class="text-center fw-bold">
+    <button type="submit" class="btn btn-success btn-lg">Submit</button>
+  </div>
 
-          <div id="responseMessage" class="mt-3"></div>
-        </form>
+  <div id="responseMessage" class="mt-3"></div>
+</form>
+
       </div>
     </div>
 
@@ -651,7 +631,7 @@
         once: true, // This makes animations repeat on every scroll
       });
     </script>
-    <script src="send_mail.php"></script>
+    
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
