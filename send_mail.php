@@ -1,32 +1,66 @@
 <?php
-header("Content-Type: application/json");
+// Include Composer's autoload file
+require 'vendor/autoload.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = filter_var($_POST["name"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $phone = filter_var($_POST["phone"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $services = filter_var($_POST["services"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $message = filter_var($_POST["message"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+// Create a new PHPMailer instance
+$mail = new PHPMailer\PHPMailer\PHPMailer();
 
-    $to = "muhammad.danish1015@gmail.com"; // 🔹 Replace with your email
+try {
+    // Set PHPMailer to use SMTP
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';  // Gmail SMTP server
+    $mail->SMTPAuth = true;
+    $mail->Username = 'danishkhanghunio456@gmail.com';  // Your Gmail address
+    $mail->Password = 'Muhammad03153130356';  // Your Gmail password (or App-specific password if 2FA enabled)
+    $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;  // Use port 465 for SSL or 587 for TLS
+
+    // Get form data
+    $name = filter_var(trim($_POST["name"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $email = filter_var(trim($_POST["email"] ?? ""), FILTER_SANITIZE_EMAIL);
+    $phone = filter_var(trim($_POST["phone"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $services = filter_var(trim($_POST["services"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $message = filter_var(trim($_POST["message"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    // Check if required fields are filled
+    if (empty($name) || empty($email) || empty($phone) || empty($services) || empty($message)) {
+        echo json_encode(["success" => false, "message" => "All fields are required."]);
+        exit;
+    }
+
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(["success" => false, "message" => "Invalid email address."]);
+        exit;
+    }
+
+    // Set the sender's email and name based on the form data
+    $mail->setFrom($email, $name);  // Sender's email and name as per the form
+
+    // Add the recipient's email address (where you want to receive the messages)
+    $mail->addAddress('danishkhanghunio456@gmail.com');  // Replace with the email address where you want to receive messages
+
+    // Set email subject and body
     $subject = "New Contact Form Submission";
-    
     $body = "Name: $name\n";
     $body .= "Email: $email\n";
     $body .= "Phone: $phone\n";
     $body .= "Service Requested: $services\n\n";
     $body .= "Message:\n$message\n";
 
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n"; // 🔹 Ensures responses go to sender
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    // Set email content
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+    $mail->AltBody = strip_tags($body);  // For non-HTML email clients
 
-    if (mail($to, $subject, $body, $headers)) {
+    // Send the email
+    if ($mail->send()) {
         echo json_encode(["success" => true, "message" => "Your message has been sent successfully!"]);
     } else {
-        echo json_encode(["success" => false, "message" => "Something went wrong. Try again!"]);
+        echo json_encode(["success" => false, "message" => "Failed to send email. Please try again later."]);
     }
-} else {
-    echo json_encode(["success" => false, "message" => "Invalid Request"]);
+
+} catch (Exception $e) {
+    echo json_encode(["success" => false, "message" => "Error: " . $mail->ErrorInfo]);
 }
 ?>
