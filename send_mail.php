@@ -11,7 +11,7 @@ try {
     $mail->Host = 'smtp.gmail.com';  // Gmail SMTP server
     $mail->SMTPAuth = true;
     $mail->Username = 'danishkhanghunio456@gmail.com';  // Your Gmail address
-    $mail->Password = 'Muhammad03153130356';  // Your Gmail password (or App-specific password if 2FA enabled)
+    $mail->Password = 'vfadrjiapeqtzynl';  // Your Gmail password (or App-specific password if 2FA enabled)
     $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;  // Use port 465 for SSL or 587 for TLS
 
@@ -20,7 +20,7 @@ try {
     $email = filter_var(trim($_POST["email"] ?? ""), FILTER_SANITIZE_EMAIL);
     $phone = filter_var(trim($_POST["phone"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $services = filter_var(trim($_POST["services"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $message = filter_var(trim($_POST["message"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $message = nl2br(filter_var(trim($_POST["message"] ?? ""), FILTER_SANITIZE_FULL_SPECIAL_CHARS)); // Convert new lines to <br>
 
     // Check if required fields are filled
     if (empty($name) || empty($email) || empty($phone) || empty($services) || empty($message)) {
@@ -40,16 +40,21 @@ try {
     // Add the recipient's email address (where you want to receive the messages)
     $mail->addAddress('danishkhanghunio456@gmail.com');  // Replace with the email address where you want to receive messages
 
+    // Set email format to HTML
+    $mail->isHTML(true); 
+
     // Set email subject and body
-    $subject = "New Contact Form Submission";
-    $body = "Name: $name\n";
-    $body .= "Email: $email\n";
-    $body .= "Phone: $phone\n";
-    $body .= "Service Requested: $services\n\n";
-    $body .= "Message:\n$message\n";
+    $mail->Subject = "New Contact Form Submission";
+    $body = "
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Phone:</strong> $phone</p>
+        <p><strong>Service Requested:</strong> $services</p>
+        <p><strong>Message:</strong></p>
+        <p>$message</p>
+    ";
 
     // Set email content
-    $mail->Subject = $subject;
     $mail->Body = $body;
     $mail->AltBody = strip_tags($body);  // For non-HTML email clients
 
@@ -63,4 +68,5 @@ try {
 } catch (Exception $e) {
     echo json_encode(["success" => false, "message" => "Error: " . $mail->ErrorInfo]);
 }
+
 ?>
