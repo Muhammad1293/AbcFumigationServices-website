@@ -368,7 +368,7 @@ body {
     transform: translateX(-100%);
   }
 }
-#targetClients .text{
+#targetClients .text {
   color: #002f47;
   margin-top: 100px;
 }
@@ -390,8 +390,6 @@ body {
   z-index: 2;
 }
 
-
-
 .logos:hover .logos-slide {
   animation-play-state: paused;
 }
@@ -407,12 +405,31 @@ body {
 }
 
 /* Contact */
-.contact-sec .text{
+.contact-sec .text {
   margin-top: 50px;
   color: #002f47;
 }
 
+/* Whatsapp Link CSS */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
 
+.whatsapp-icon img {
+  width: 50px;
+  height: 50px;
+  /* display: block; */
+}
+.whatsapp-icon:hover {
+  background-color: #128c7e;
+}
 
 /* Footer */
 footer .text {
