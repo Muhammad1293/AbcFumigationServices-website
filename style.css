@@ -415,21 +415,30 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25d366;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  background: #25d366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-icon img {
-  width: 50px;
-  height: 50px;
-  /* display: block; */
+  width: 30px;
+  height: 30px;
 }
+
+.whatsapp-icon span {
+  font-size: 16px;
+}
+
 .whatsapp-icon:hover {
-  background-color: #128c7e;
+  background: #1ebe57;
 }
+
 
 /* Footer */
 footer .text {
