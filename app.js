@@ -16,29 +16,42 @@ const services = [
   {
     title: "Pest Control",
     image: "images/services/pest-control.jpg",
-    description: "Safe and effective pest removal solutions."
+    description:
+      "We provide reliable and effective pest control solutions to keep your home and business safe from unwanted pests. Our expert team specializes in eliminating termites, rodents, cockroaches, bed bugs, and more using eco-friendly and safe methods.",
   },
   {
     title: "Termite Treatment",
     image: "images/services/termite-control.jpg",
-    description: "Protect your home from destructive termites."
+    description:
+      "Protect your property from destructive termites with our professional termite treatment solutions. We use advanced techniques to detect, eliminate, and prevent termite infestations, ensuring long-lasting protection for your home or business.",
   },
   {
     title: "Rodent Control",
     image: "images/services/rat-control.jpg",
-    description: "Keep your house rodent-free with expert solutions."
+    description:
+      "Keep your home and business rodent-free with our expert rodent control solutions. We use safe and effective methods to eliminate rats and mice, preventing damage and health risks.",
   },
   {
     title: "Bed Bug Removal",
     image: "images/services/bed-bug-control.jpg",
-    description: "Eliminate bed bugs with our specialized treatment."
+    description:
+      "Eliminate bed bugs quickly and effectively with our professional treatment. We use safe and advanced techniques to ensure complete eradication, giving you a peaceful and bite-free sleep.",
+  },
+  {
+    title: "Water Tank Cleaning",
+    image:
+      "https://www.edgedxb.com/files/images/ecommerce/products/water-tank-cleaning-2.jpg",
+    description:
+      "Ensure clean and safe water with our professional water tank cleaning services. We use advanced techniques to remove dirt, bacteria, and algae, providing hygienic and fresh water for your home or business. Keep your water tank free from contamination with our expert cleaning solutions.",
   },
 ];
 
 function generateWhatsAppLink(serviceTitle) {
   const phone = "923353482478";
   const message = `Hello, I am interested in your ${serviceTitle} service. Can you provide more details?`;
-  return `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
+    message
+  )}`;
 }
 
 const servicesContainer = document.getElementById("services-container");
@@ -47,20 +60,24 @@ services.forEach((service) => {
   const card = document.createElement("div");
   card.classList.add("services-sec", "col-lg-6", "col-md-12", "mb-4");
   card.innerHTML = `
-    <div class="service-card d-flex flex-md-row flex-column align-items-center p-3" 
+    <div class="service-card d-flex flex-column h-100 p-3" 
          data-aos="fade-up" data-aos-duration="3000" 
          style="border: 1px solid #ddd; border-radius: 10px; background: #fff;">
          
-        <div class="service-image flex-shrink-0 w-100 text-center mb-3 mb-md-0" 
-             style="max-width: 300px;">
+        <div class="service-image w-100 text-center mb-3" 
+             style="max-width: 300px; margin: 0 auto;">
             <img src="${service.image}" alt="${service.title}" 
                  style="width: 100%; border-radius: 10px;">
         </div>
         
-        <div class="service-content text-center text-md-start ms-md-3 w-100">
-            <h4 class="mt-2 font-bold text-success">${service.title}</h4>
-            <p class="mb-2">${service.description}</p>
-            <a href="${generateWhatsAppLink(service.title)}" target="_blank" class="btn btn-success">Contact Us</a>
+        <div class="service-content text-center text-md-start w-100 flex-grow-1 d-flex flex-column justify-content-between">
+            <h4 class="mt-2 font-bold text-success text-center">${
+              service.title
+            }</h4>
+            <p class="mb-2 flex-grow-1 text-center">${service.description}</p>
+            <a href="${generateWhatsAppLink(
+              service.title
+            )}" target="_blank" class="btn btn-success mt-auto">Contact Us</a>
         </div>
     </div>
   `;
@@ -79,52 +96,6 @@ videoModal.addEventListener("show.bs.modal", function () {
 videoModal.addEventListener("hidden.bs.modal", function () {
   youtubeVideo.src = "";
 });
-
-// Client Section
-const clients = [
-  "images/clients/Habib-Asset-Management.png",
-  "images/clients/Habib-Metropolitan-Bank.png",
-  "images/clients/Ismail-Industries-Limited.png",
-  "images/clients/Ismail-Industries-Limited.png",
-  "images/clients/Ismail-Industries-Limited.png",
-  "images/clients/Lucky-Electric.png",
-  "images/clients/Lucky-Electric.png",
-  "images/clients/Lucky-Electric.png",
-  "images/clients/Ismail-Industries-Limited.png",
-  "images/clients/Ismail-Industries-Limited.png",
-  "images/clients/Ismail-Industries-Limited.png",
-  "images/clients/Ismail-Industries-Limited.png",
-];
-
-// Function to create slides dynamically
-function createClientSlides() {
-  const carouselContent = document.getElementById("carouselContent");
-  carouselContent.innerHTML = ""; // Clear previous content
-
-  let slides = "";
-  let activeClass = "active";
-
-  for (let i = 0; i < clients.length; i += 4) {
-    let slideItems = clients
-      .slice(i, i + 4)
-      .map(client => `<img src="${client}" class="img-fluid client-logo" alt="Client">`)
-      .join("");
-
-    slides += `
-      <div class="carousel-item ${activeClass}">
-          <div class="d-flex justify-content-between align-items-center">
-              ${slideItems}
-          </div>
-      </div>
-    `;
-    activeClass = ""; // Only first slide should be active
-  }
-
-  carouselContent.innerHTML = slides;
-}
-
-// Load client slides on page load
-window.onload = createClientSlides;
 
 // Contact Form Submission
 $(document).ready(function () {

@@ -71,7 +71,7 @@
   }
 }
 @media only screen and (max-width: 1180px) {
-  .services-sec {
+  /* .services-sec {
     flex: 0 0 100%;
-  }
+  } */
 }
